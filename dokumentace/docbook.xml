@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbook.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/sch/docbook.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1" xml:lang="cs">
+    <info>
+        <title>SmarTelefon – eshop s chytrými telefony</title>
+        <author>
+            <personname>
+                <firstname>Petr</firstname>
+                <surname>Hovorka</surname>
+            </personname>
+            <email>hovp01@vse.cz</email>
+        </author>
+        <copyright>
+            <year>2018</year>
+            <holder>Petr Hovorka</holder>
+        </copyright>
+    </info>
+    <preface>
+        <title>Úvod</title>
+        <para>Dokumentace semestrální práce z předmětu 4IZ238 –  XML - Teorie a praxe značkovacích
+            jazyků.</para>
+        <sect1>
+            <info>
+                <title>Výběr tématu</title>
+            </info>
+            <para>Tato práce slouží jako evidence produktů v eshopu s chytrými mobilními telefony.
+                Je zaevidováno několik modelů včetně technických parametrů, ceny a dalších
+                podrobností.</para>
+        </sect1>
+        <sect1>
+            <info>
+                <title>Obsah semestrální práce</title>
+            </info>
+            <para>V této semestrální práci řeším transformaci XML dokuentu do HTML a PDF. Konkrétně
+                práce obsahuje samotný XML dokument, který validuji pomocí XML Schema dokumentu
+                (XSD). Toto XML následně transformuji pomocí XSLT do HTML a do FO, ze kterého
+                generuji výsledné PDF. </para>
+        </sect1>
+    </preface>
+    <chapter>
+        <title>XML</title>
+        <sect1>
+            <title>XML soubor</title>
+            <para>V XML souboru se nachází mnoho elementů. Jejich význam je popsán v následující
+                podkapitole.</para>
+            <sect2>
+                <info>
+                    <title>Význam elementů</title>
+                </info>
+                <programlisting>eshop – kořenový element
+ polozky – rodič všech položek
+  polozka – jedna položka
+   vyrobce – výrobce telefonu
+   model – modelové označení
+   produktoveCislo – jedinečné produktové číslo
+   cena (@typ aktualni/puvodni, @mena CZK/EUR) – cena telefonu 
+   dostupnost
+    sklad (@mesto Praha/Brno/Ostrava) – počet položek na skladě
+   obrazek – název souboru s obrázkem telefonu
+   video – odkaz na YouTube video
+   popis – několik vět o produktu
+   parametry – rodič všech parametrů
+    system – rodič informací o systému
+    nazev – název systému
+     verze – označení verze systému
+    ram (@jednotka MB/GB/TB) – množství paměti ram
+    interniUloziste (@jednotka MB/GB/TB) – mnoství interní paměti
+    externiUloziste – typ externího úložiště
+    cpu – rodič parametrů procesoru
+     nazev – název procesoru
+     pocetJader – počet jader procesoru
+     frekvence (@jednotka GHz/MHz) – frekvence CPU 
+    fotoaparat (@typ predni/zadni) – rodič parametrů fotoaparátu
+     rozliseni – rozlišení fotoaparátu
+     svetelnost – světelnost fotoaparátu
+     blesk – ano/ne zda má fotoaparát blesk
+     stabilizace – ano/ne zda má fotoaparát optickou stabilizaci
+    displej – rodič parametrů displeje
+     velikost (@jednotka ") – velikost displeje
+     rozliseni – rozlišení displeje
+    baterie – rodič parametrů baterie
+     kapacita (@jednotka mAh/Ah) – kapacita baterie
+    sim (@typ nano/mikro/mini) – rodič sim karet
+     pocet – počet SIM karet daného typu
+    konektivita – rodič parametrů konektivity
+     wifi – ano/ne
+     lte – ano/ne
+     bluetooth – ano/ne
+     nfc – ano/ne
+    barvy – rodič barev
+     barva – jednotlivá dostupná barva telefonu
+    rozmery (@jednotka mm/cm) – rodič jednotlivých rozměrů telefonu
+     s – šířka
+     v – výška
+     h – hloubka
+    obsahBaleni – rodič položek obsahu balení
+     polozka – jednotlivá položka obsahu balení
+ dph – aktuální sazba DPH
+                </programlisting>
+            </sect2>
+        </sect1>
+        <sect1>
+            <info>
+                <title>XML Schema</title>
+            </info>
+            <para>XML schéma popisuje strukturu XML dokumentu popsaného výše. Říká, které elementy
+                XML musí obsahovat, jejich počet, pořadí a definuje další omezení. V neposlední řadě
+                se dá použít pro kontrolu unikátnosti, viz následující ukázka kódu ze semestrální
+                práce.<programlisting language="xml">&lt;xs:unique name="unikatnostProduktovychCisel">
+    &lt;xs:selector xpath="polozky/polozka/produktoveCislo"/>
+    &lt;xs:field xpath="."/>
+&lt;/xs:unique></programlisting></para>
+        </sect1>
+        <sect1>
+            <info>
+                <title>Schematron</title>
+            </info>
+            <para>V semestrální práci jsem Schematron použil pro kontrolu cen. Původní cena nemůže
+                být menší, než
+                současná.<programlisting language="xml">&lt;xs:annotation>
+  &lt;xs:appinfo>
+    &lt;sch:pattern>
+      &lt;sch:title>Kontrola cen&lt;/sch:title>
+      &lt;sch:rule context="q:eshop/q:polozky/q:polozka">
+        &lt;sch:assert test="sum(q:cena[@typ = 'puvodni'][@mena = 'CZK'])
+          >= sum(q:cena[@typ = 'aktualni'][@mena = 'CZK'])">
+          Aktuální cena musí být stejná, nebo nižší, než původní(CZK)!
+        &lt;/sch:assert>
+        &lt;sch:assert test="sum(q:cena[@typ = 'puvodni'][@mena = 'EUR']) 
+          >= sum(q:cena[@typ = 'aktualni'][@mena = 'EUR'])">
+          Aktuální cena musí být stejná, nebo nižší, než původní(EUR)!
+        &lt;/sch:assert>
+      &lt;/sch:rule>
+    &lt;/sch:pattern>
+  &lt;/xs:appinfo>
+&lt;/xs:annotation></programlisting></para>
+        </sect1>
+    </chapter>
+    <chapter>
+        <info>
+            <title>XSL Transformace</title>
+        </info>
+        <para>V obou transformacích jsem použil XSLT ve verzi 3.0, protože se mi ve dvou podmínkách
+            hodil operátor <code>||</code> (nebo), který je podporovaný až v XPath 3.0.</para>
+        <sect1>
+            <info>
+                <title>Transformace do HTML</title>
+            </info>
+            <para>Transformace je prováděna pomocí souboru <code>eshop_html.xsl</code>. Jednotlivé
+                html stránky následně načítají externí kaskádové (CSS) styly ze souboru
+                    <code>styl.css</code>. Vygenerované html stránky jsou plně responzivní. Většina
+                prvků ve stránce je rozmístěna pomocí flexbox layoutu.</para>
+            <sect2>
+                <info>
+                    <title>Vkládání videí</title>
+                </info>
+                <para>V XML Schématu je definován nepovinný element <code>&lt;video></code>. Do
+                    tohoto elementu se dají vkládat odkazy na YouTube videa. Z tohoto odkazu se
+                    následně pomocí regulárního výrazu získá VideoID, díky kterému se poté do
+                        <code>html</code> vkládá <code>&lt;iframe></code> s daným YouTube
+                    videem.</para>
+                <programlisting language="xml">&lt;iframe>
+    &lt;xsl:attribute name="src">
+        &lt;xsl:text>https://www.youtube.com/embed/&lt;/xsl:text>
+        &lt;xsl:analyze-string select="../ph:video" 
+            regex="^.*(youtu.be/|v/|embed/|watch\?|youtube.com/user/
+            [^#]*#([^/]*?/)*)\??v?=?([^#&amp;\?]*).*">
+            &lt;xsl:matching-substring>
+                &lt;xsl:value-of select="regex-group(3)"/>
+            &lt;/xsl:matching-substring>
+            &lt;xsl:non-matching-substring>
+                &lt;xsl:message>
+                    &lt;xsl:text>Chyba ve vstupních datech: &lt;/xsl:text>
+                    &lt;xsl:value-of select="."/>
+                &lt;/xsl:message>
+            &lt;/xsl:non-matching-substring>
+        &lt;/xsl:analyze-string>
+        &lt;xsl:text>?rel=0&amp;showinfo=0&lt;/xsl:text>
+    &lt;/xsl:attribute>
+    &lt;xsl:attribute name="allowfullscreen"/>
+&lt;/iframe></programlisting>
+                <figure>
+                    <title>Jedna z vygenerovaných html stránek</title>
+                    <mediaobject>
+                        <imageobject>
+                            <imagedata fileref="img/screenshot.PNG" format="PNG" width="100%" scalefit="1"/>
+                        </imageobject>
+                    </mediaobject>
+                </figure>
+            </sect2>
+        </sect1>
+        <sect1>
+            <info>
+                <title>Transformace do FO</title>
+            </info>
+            <para>Transformace je prováděna pomocí souboru <code>eshop_fo.xsl</code>. Snažil jsem se
+                dodržet stejný grafický styl jako v případě html.</para>
+            <figure>
+                <title>Vygenerované PDF</title>
+                <mediaobject>
+                    <imageobject>
+                        <imagedata fileref="img/screenshotPDF.PNG" format="PNG" width="100%" scalefit="1"/>
+                    </imageobject>
+                </mediaobject>
+            </figure>
+        </sect1>
+    </chapter>
+    
+</book>

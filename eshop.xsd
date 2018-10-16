@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+    xmlns:sch="http://purl.oclc.org/dsdl/schematron" elementFormDefault="qualified"
+    xmlns="https://petrhovorka.com/smartelefon"
+    targetNamespace="https://petrhovorka.com/smartelefon" vc:minVersion="1.1"
+    xpathDefaultNamespace="https://petrhovorka.com/smartelefon">
+    <xs:annotation>
+        <xs:appinfo>
+            <sch:ns uri="https://petrhovorka.com/smartelefon" prefix="q"/>
+        </xs:appinfo>
+    </xs:annotation>
+    <xs:element name="eshop" type="eshopType">
+        <xs:annotation>
+            <xs:appinfo>
+                <sch:pattern>
+                    <sch:title>Kontrola cen</sch:title>
+                    <sch:rule context="q:eshop/q:polozky/q:polozka">
+                        <sch:assert
+                            test="sum(q:cena[@typ = 'puvodni'][@mena = 'CZK']) &gt;= sum(q:cena[@typ = 'aktualni'][@mena = 'CZK'])"
+                            >Aktuální cena musí být stejná, nebo nižší, než původní
+                            (CZK)!</sch:assert>
+                        <sch:assert
+                            test="sum(q:cena[@typ = 'puvodni'][@mena = 'EUR']) &gt;= sum(q:cena[@typ = 'aktualni'][@mena = 'EUR'])"
+                            >Aktuální cena musí být stejná, nebo nižší, než původní
+                            (EUR)!</sch:assert>
+                    </sch:rule>
+                </sch:pattern>
+            </xs:appinfo>
+        </xs:annotation>
+        <xs:unique name="unikatnostProduktovychCisel">
+            <xs:selector xpath="polozky/polozka/produktoveCislo"/>
+            <xs:field xpath="."/>
+        </xs:unique>
+    </xs:element>
+    <xs:complexType name="eshopType">
+        <xs:sequence>
+            <xs:element name="polozky" type="polozkyType" maxOccurs="1"/>
+            <xs:element name="dph" type="dphType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="polozkyType">
+        <xs:sequence>
+            <xs:element name="polozka" type="polozkaType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="dphType">
+        <xs:restriction base="kladnaDesetinnaType"/>
+    </xs:simpleType>
+    <xs:complexType name="polozkaType">
+        <xs:sequence>
+            <xs:element name="vyrobce" type="vyrobceType"/>
+            <xs:element name="model" type="modelType"/>
+            <xs:element name="produktoveCislo" type="produktoveCisloType"/>
+            <xs:element name="cena" type="cenaType" minOccurs="4" maxOccurs="4"/>
+            <xs:element name="dostupnost" type="dostupnostType"/>
+            <xs:element name="obrazek" type="obrazekType"/>
+            <xs:element name="video" type="videoType" minOccurs="0"/>
+            <xs:element name="popis" type="popisType"/>
+            <xs:element name="parametry" type="parametryType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="parametryType">
+        <xs:sequence>
+            <xs:element name="system" type="systemType"/>
+            <xs:element name="ram" type="ramType"/>
+            <xs:element name="interniUloziste" type="interniUlozisteType"/>
+            <xs:element name="externiUloziste" type="externiUlozisteType" minOccurs="0"/>
+            <xs:element name="cpu" type="cpuType"/>
+            <xs:element name="fotoaparat" type="fotoaparatType" minOccurs="2" maxOccurs="unbounded"/>
+            <xs:element name="displej" type="displejType"/>
+            <xs:element name="baterie" type="baterieType"/>
+            <xs:element name="sim" type="simType"/>
+            <xs:element name="konektivita" type="konektivitaType"/>
+            <xs:element name="barvy" type="barvyType"/>
+            <xs:element name="rozmery" type="rozmeryType"/>
+            <xs:element name="obsahBaleni" type="obsahBaleniType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="vyrobceType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="modelType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="produktoveCisloType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:complexType name="cenaType">
+        <xs:simpleContent>
+            <xs:extension base="xs:positiveInteger">
+                <xs:attribute name="typ" type="typCenyType" use="required"/>
+                <xs:attribute name="mena" type="menaType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="typCenyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="puvodni"/>
+            <xs:enumeration value="aktualni"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="menaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CZK"/>
+            <xs:enumeration value="EUR"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="dostupnostType">
+        <xs:sequence>
+            <xs:element name="sklad" type="skladType" maxOccurs="3"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="skladType">
+        <xs:simpleContent>
+            <xs:extension base="kladnaCelaSNulouType">
+                <xs:attribute name="mesto" type="mestoType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="mestoType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Praha"/>
+            <xs:enumeration value="Brno"/>
+            <xs:enumeration value="Ostrava"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="obrazekType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="videoType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="http://youtu.be.+"/>
+            <xs:pattern value="https://youtu.be.+"/>
+            <xs:pattern value="http://www.youtube.com/watch.+"/>
+            <xs:pattern value="https://www.youtube.com/watch.+"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="popisType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:complexType name="systemType">
+        <xs:sequence>
+            <xs:element name="nazev" type="systemNazevType" maxOccurs="1"/>
+            <xs:element name="verze" type="systemVerzeType" maxOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="systemNazevType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Android"/>
+            <xs:enumeration value="iOS"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="systemVerzeType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:complexType name="ramType">
+        <xs:simpleContent>
+            <xs:extension base="xs:positiveInteger">
+                <xs:attribute name="jednotka" type="jednotkaUlozisteType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="jednotkaUlozisteType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="TB"/>
+            <xs:enumeration value="GB"/>
+            <xs:enumeration value="MB"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="interniUlozisteType">
+        <xs:simpleContent>
+            <xs:extension base="xs:positiveInteger">
+                <xs:attribute name="jednotka" type="jednotkaUlozisteType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="externiUlozisteType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:complexType name="cpuType">
+        <xs:sequence>
+            <xs:element name="nazev" type="cpuNazevType"/>
+            <xs:element name="pocetJader" type="pocetJaderType"/>
+            <xs:element name="frekvence" type="frekvenceType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="cpuNazevType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="pocetJaderType">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+    <xs:complexType name="frekvenceType">
+        <xs:simpleContent>
+            <xs:extension base="kladnaDesetinnaType">
+                <xs:attribute name="jednotka" type="jednotkaFrekvenceType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="jednotkaFrekvenceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="GHz"/>
+            <xs:enumeration value="MHz"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="fotoaparatType">
+        <xs:sequence>
+            <xs:element name="rozliseni" type="rozliseniFotoaparatuType"/>
+            <xs:element name="svetelnost" type="svetelnostType" minOccurs="0"/>
+            <xs:element name="blesk" type="bleskType" minOccurs="0"/>
+            <xs:element name="stabilizace" type="stabilizaceType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="typ" type="typFotoaparatuType" use="required"/>
+    </xs:complexType>
+    <xs:simpleType name="rozliseniFotoaparatuType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="svetelnostType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="bleskType">
+        <xs:restriction base="anoNeType"/>
+    </xs:simpleType>
+    <xs:simpleType name="stabilizaceType">
+        <xs:restriction base="anoNeType"/>
+    </xs:simpleType>
+    <xs:simpleType name="typFotoaparatuType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="predni"/>
+            <xs:enumeration value="zadni"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="displejType">
+        <xs:sequence>
+            <xs:element name="velikost" type="velikostDisplejeType"/>
+            <xs:element name="rozliseni" type="rozliseniDisplejeType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="velikostDisplejeType">
+        <xs:simpleContent>
+            <xs:extension base="kladnaDesetinnaType">
+                <xs:attribute name="jednotka" type="jednotkaVelikostDisplejeType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="jednotkaVelikostDisplejeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="&quot;"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="rozliseniDisplejeType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:complexType name="baterieType">
+        <xs:sequence>
+            <xs:element name="kapacita" type="kapacitaBaterieType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="kapacitaBaterieType">
+        <xs:simpleContent>
+            <xs:extension base="kladnaDesetinnaType">
+                <xs:attribute name="jednotka" type="jednotkaBaterieType" use="required"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    <xs:simpleType name="jednotkaBaterieType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mAh"/>
+            <xs:enumeration value="Ah"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="simType">
+        <xs:sequence>
+            <xs:element name="pocet" type="pocetSimType"/>
+        </xs:sequence>
+        <xs:attribute name="typ" type="typSimType" use="required"/>
+    </xs:complexType>
+    <xs:simpleType name="pocetSimType">
+        <xs:restriction base="xs:positiveInteger"/>
+    </xs:simpleType>
+    <xs:simpleType name="typSimType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="nano"/>
+            <xs:enumeration value="micro"/>
+            <xs:enumeration value="mini"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:complexType name="konektivitaType">
+        <xs:sequence>
+            <xs:element name="wifi" type="anoNeType"/>
+            <xs:element name="lte" type="anoNeType"/>
+            <xs:element name="bluetooth" type="anoNeType"/>
+            <xs:element name="nfc" type="anoNeType"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="barvyType">
+        <xs:sequence>
+            <xs:element name="barva" type="barvaType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="barvaType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:complexType name="rozmeryType">
+        <xs:sequence>
+            <xs:element name="s" type="rozmeryVelikostiType"/>
+            <xs:element name="v" type="rozmeryVelikostiType"/>
+            <xs:element name="h" type="rozmeryVelikostiType"/>
+        </xs:sequence>
+        <xs:attribute name="jednotka" type="jednotkaRozmeruTelefonuType" use="required"/>
+    </xs:complexType>
+    <xs:simpleType name="jednotkaRozmeruTelefonuType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="mm"/>
+            <xs:enumeration value="cm"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="rozmeryVelikostiType">
+        <xs:restriction base="kladnaDesetinnaType"/>
+    </xs:simpleType>
+    <xs:complexType name="obsahBaleniType">
+        <xs:sequence>
+            <xs:element name="polozka" type="obsahBaleniPolozkaType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="obsahBaleniPolozkaType">
+        <xs:restriction base="xs:string"/>
+    </xs:simpleType>
+    <xs:simpleType name="kladnaDesetinnaType">
+        <xs:restriction base="xs:decimal">
+            <xs:minExclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="kladnaCelaSNulouType">
+        <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="anoNeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ano"/>
+            <xs:enumeration value="Ano"/>
+            <xs:enumeration value="ANO"/>
+            <xs:enumeration value="ne"/>
+            <xs:enumeration value="Ne"/>
+            <xs:enumeration value="NE"/>
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

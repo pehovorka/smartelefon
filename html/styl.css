@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,400&subset=latin-ext');
+html {
+    scroll-behavior: smooth;
+}
+body{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 300;
+    padding: 0;
+    margin: 0;
+    color: #333;
+    font-size: 17px;
+}
+h2{
+    font-weight:300;
+    font-size: 25px;
+    margin-bottom: 0px;
+}
+#zahlavi {
+    background-color: #4E5066;
+    padding: 5px 5px 5px 50px;
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.6);
+}
+
+#zapati {
+    background-color: #4E5066;
+    padding: 5px 5px 5px 50px;
+}
+
+#zapati p {
+    text-align: center;
+    color: #fff;
+    margin: 0 0 0 0;
+}
+
+
+#zahlavi h1 {
+    color: #fff;
+    margin: 0;
+    font-weight: 300;
+}
+
+.polozkyGrid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+
+.polozkyGrid > div.polozka{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    background-color: #fff;
+    width: 250px;
+    margin: 10px;
+    text-align: center;
+    font-size: 17px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 8px;
+    transition: box-shadow 0.5s ease;
+    border-radius: 3px 3px 3px 3px;
+}
+
+.polozkyGrid > div.polozka:hover{
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 12px 25px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+
+.polozkyGrid > div.polozka > div.vrsek > div.nazev > a {
+    font-weight: 400;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.polozkyGrid > div.polozka > div.vrsek > div.nazev > a:hover {
+    text-decoration: underline;
+}
+
+.polozkyGrid > div.polozka > div.spodek {
+    margin-top: 15px;
+    line-height: 22px;
+}
+
+
+.polozkyGrid > div.polozka > div.spodek img {
+    max-height: 234px;
+    max-width: 234px;
+}
+.polozkyGrid > div.polozka > div.spodek > div.cenaAktualni {
+    font-size: 25px;
+    font-weight: 400;
+    color: red;
+}
+.polozkyGrid > div.polozka > div.spodek > div.cenaPuvodni {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 300;
+}
+.polozkyGrid > div.polozka > div.spodek > div.cenaPuvodni > div.levy {
+    text-decoration: line-through;
+    margin-right: 20px;
+}
+.polozkyGrid > div.polozka > div.spodek > div.cenaBezDPH {
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.polozkyGrid > div.polozka > div.spodek > div.dostupnost > span.neniSkladem {
+    color: red;
+}
+
+.polozkyGrid > div.polozka > div.spodek > div.dostupnost > span.skladem {
+    color: green;
+}
+
+#detailProduktu{
+    max-width: 1224px;
+    margin: 0 auto;
+    padding: 30px 35px 20px 35px;
+}
+
+#hlavniStranka{
+    padding: 10px 50px 20px 50px;
+}
+
+#detailVrchni{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+}
+
+#detailVrchni h2{
+    font-weight: 400;
+    font-size: 30px;
+}
+
+#detailVrchni .viceInfo{
+   text-align: right;
+}
+
+#detailVrchni .viceInfo a{
+   color: inherit;
+   text-decoration: none;
+   font-weight: 400;
+   font-size: 15px;
+}
+
+
+#detailVrchni .ceny{
+    margin-top: 25px;
+}
+
+
+#detailVrchni .cenaSDPH{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    font-weight: 400;
+    font-size: 25px;
+}
+
+#detailVrchni .cenaSDPH > div.pravy{
+    color: red;
+}
+
+#detailVrchni .cenaBezDPH{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    color: #696969;
+}
+
+#detailVrchni .ostatni{
+    margin-top: 15px;
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #808080; 
+    font-size: 16px;
+}
+
+#detailVrchni .ostatni .levy{
+    padding: 0 10px 0 10px;
+}
+
+#detailVrchni .parametry{
+text-align: justify;
+}
+
+
+#detailVrchni .dostupnost{
+margin-top: 20px;
+}
+
+#detailVrchni > div.levy img{
+    max-width: 97%;
+}
+
+#detailVrchni > div.pravy {
+    width: 60%;
+}
+
+#detailVrchni > div.levy {
+    width: 40%;
+}
+
+#detailVrchni > div.pravy h2{
+    margin-top: 0px;
+}
+#detailSpodni {
+    margin-top: 25px;
+}
+
+#detailSpodni .popis {
+    font-size: 19px;
+    text-align: center;
+}
+#detailSpodni .video {
+    text-align: center;
+    margin: 20px;
+}
+
+#detailSpodni .video iframe {
+    border: 0;
+}
+
+#detailSpodni h3 {
+    font-size: 23px;
+    font-weight: 400;
+}
+.video {
+ position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 0px; height: 0; overflow: hidden;
+  }
+.video iframe, .video object, .video embed {
+position: absolute;
+top: 0; 
+left: 0; 
+width: 100%; 
+height: 100%; 
+}
+
+#technickeParametryTabulka {
+      background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+  padding:5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+#technickeParametryTabulka tr {
+  border-top: 1px solid #C1C3D1;
+  font-weight:normal;
+}
+ 
+#technickeParametryTabulka tr:hover td {
+  background:#e0e0e0;
+}
+ 
+#technickeParametryTabulka tr:first-child {
+  border-top:none;
+}
+
+#technickeParametryTabulka tr:last-child {
+  border-bottom:none;
+}
+ 
+#technickeParametryTabulka tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+#technickeParametryTabulka tr:nth-child(odd):hover td {
+  background:#e0e0e0;
+}
+
+#technickeParametryTabulka tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+#technickeParametryTabulka tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+ #technickeParametryTabulka th {
+  background: #4E5066;
+  color: #fff;
+  padding: 10px 15px 10px 25px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:400;
+  font-size:18px;
+}
+ 
+#technickeParametryTabulka td {
+  background:#FFFFFF;
+  padding: 10px 15px 10px 25px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+}
+
+#technickeParametryTabulka td:first-child {
+    width: 25%;
+    min-width: 150px;
+}
+
+.dostupnost table {
+      background: white;
+  border-radius:3px;
+  border-collapse: collapse;
+  margin: auto;
+  width: 100%;
+  padding:5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dostupnost tr {
+  border-top: 1px solid #C1C3D1;
+  font-weight:normal;
+}
+ 
+.dostupnost tr:hover td {
+  background:#e0e0e0;
+}
+ 
+.dostupnost tr:first-child {
+  border-top:none;
+}
+
+.dostupnost tr:last-child {
+  border-bottom:none;
+}
+ 
+.dostupnost tr:nth-child(odd) td {
+  background:#EBEBEB;
+}
+ 
+.dostupnost tr:nth-child(odd):hover td {
+  background:#e0e0e0;
+}
+
+.dostupnost tr:last-child td:first-child {
+  border-bottom-left-radius:3px;
+}
+ 
+.dostupnost tr:last-child td:last-child {
+  border-bottom-right-radius:3px;
+}
+ 
+.dostupnost th {
+  background: #4E5066;
+  color: #fff;
+  padding: 4px 15px 4px 25px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:400;
+  font-size:18px;
+}
+ 
+.dostupnost td {
+  background:#FFFFFF;
+  padding: 4px 15px 4px 25px;
+  text-align:left;
+  vertical-align:middle;
+  font-weight:300;
+  font-size:18px;
+}
+
+.dostupnost td:first-child {
+    width: 50%;
+    min-width: 100px;
+}
+
+.dostupnost td:last-child {
+    width: 50%;
+    text-align: right;
+}
+
+@media only screen and (max-width: 600px) {
+    #detailVrchni > div.pravy {
+    width: 100%;
+}
+#detailVrchni > div.levy {
+    width: 100%;
+}
+#detailVrchni > div.levy img {
+    margin: 0 auto;
+    width: 100%;  
+}
+.polozkyGrid > div.polozka{
+    width: 100%;
+}
+}
+
+
+

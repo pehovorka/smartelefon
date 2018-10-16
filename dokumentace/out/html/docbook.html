@@ -1,0 +1,111 @@
+<html xmlns:ng="http://docbook.org/docbook-ng"><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <title>SmarTelefon &#8211; eshop s chytr&yacute;mi telefony</title><meta name="generator" content="DocBook XSL Stylesheets V1.79.2"></head><body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF"><div lang="cs" class="book"><div class="titlepage"><div><div><h1 class="title"><a name="d5e1"></a>SmarTelefon &#8211; eshop s chytr&yacute;mi telefony</h1></div><div><div class="author"><h3 class="author"><span class="firstname">Petr</span> <span class="surname">Hovorka</span></h3><code class="email">&lt;<a class="email" href="mailto:hovp01@vse.cz">hovp01@vse.cz</a>&gt;</code></div></div><div><p class="copyright">Copyright &copy; 2018 Petr Hovorka</p></div></div><hr></div><div class="toc"><p><b>Obsah</b></p><dl class="toc"><dt><span class="preface"><a href="#d5e12">&Uacute;vod</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d5e15">V&yacute;b&#283;r t&eacute;matu</a></span></dt><dt><span class="sect1"><a href="#d5e19">Obsah semestr&aacute;ln&iacute; pr&aacute;ce</a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e23">1. XML</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d5e25">XML soubor</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d5e28">V&yacute;znam element&#367;</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d5e32">XML Schema</a></span></dt><dt><span class="sect1"><a href="#d5e37">Schematron</a></span></dt></dl></dd><dt><span class="chapter"><a href="#d5e42">2. XSL Transformace</a></span></dt><dd><dl><dt><span class="sect1"><a href="#d5e47">Transformace do HTML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d5e53">Vkl&aacute;d&aacute;n&iacute; vide&iacute;</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d5e66">Transformace do FO</a></span></dt></dl></dd></dl></div><div class="list-of-figures"><p><b>Seznam obr&aacute;zk&#367;</b></p><dl><dt>2.1. <a href="#d5e61">Jedna z vygenerovan&yacute;ch html str&aacute;nek</a></dt><dt>2.2. <a href="#d5e71">Vygenerovan&eacute; PDF</a></dt></dl></div><div class="preface"><div class="titlepage"><div><div><h1 class="title"><a name="d5e12"></a>&Uacute;vod</h1></div></div></div><div class="toc"><p><b>Obsah</b></p><dl class="toc"><dt><span class="sect1"><a href="#d5e15">V&yacute;b&#283;r t&eacute;matu</a></span></dt><dt><span class="sect1"><a href="#d5e19">Obsah semestr&aacute;ln&iacute; pr&aacute;ce</a></span></dt></dl></div><p>Dokumentace semestr&aacute;ln&iacute; pr&aacute;ce z p&#345;edm&#283;tu 4IZ238 &#8211;  XML - Teorie a praxe zna&#269;kovac&iacute;ch
+            jazyk&#367;.</p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e15"></a>V&yacute;b&#283;r t&eacute;matu</h2></div></div></div><p>Tato pr&aacute;ce slou&#382;&iacute; jako evidence produkt&#367; v eshopu s chytr&yacute;mi mobiln&iacute;mi telefony.
+                Je zaevidov&aacute;no n&#283;kolik model&#367; v&#269;etn&#283; technick&yacute;ch parametr&#367;, ceny a dal&#353;&iacute;ch
+                podrobnost&iacute;.</p></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e19"></a>Obsah semestr&aacute;ln&iacute; pr&aacute;ce</h2></div></div></div><p>V t&eacute;to semestr&aacute;ln&iacute; pr&aacute;ci &#345;e&#353;&iacute;m transformaci XML dokuentu do HTML a PDF. Konkr&eacute;tn&#283;
+                pr&aacute;ce obsahuje samotn&yacute; XML dokument, kter&yacute; validuji pomoc&iacute; XML Schema dokumentu
+                (XSD). Toto XML n&aacute;sledn&#283; transformuji pomoc&iacute; XSLT do HTML a do FO, ze kter&eacute;ho
+                generuji v&yacute;sledn&eacute; PDF. </p></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e23"></a>Kapitola 1. XML</h1></div></div></div><div class="toc"><p><b>Obsah</b></p><dl class="toc"><dt><span class="sect1"><a href="#d5e25">XML soubor</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d5e28">V&yacute;znam element&#367;</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d5e32">XML Schema</a></span></dt><dt><span class="sect1"><a href="#d5e37">Schematron</a></span></dt></dl></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e25"></a>XML soubor</h2></div></div></div><p>V XML souboru se nach&aacute;z&iacute; mnoho element&#367;. Jejich v&yacute;znam je pops&aacute;n v n&aacute;sleduj&iacute;c&iacute;
+                podkapitole.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="d5e28"></a>V&yacute;znam element&#367;</h3></div></div></div><pre class="programlisting">eshop &#8211; ko&#345;enov&yacute; element
+ polozky &#8211; rodi&#269; v&#353;ech polo&#382;ek
+  polozka &#8211; jedna polo&#382;ka
+   vyrobce &#8211; v&yacute;robce telefonu
+   model &#8211; modelov&eacute; ozna&#269;en&iacute;
+   produktoveCislo &#8211; jedine&#269;n&eacute; produktov&eacute; &#269;&iacute;slo
+   cena (@typ aktualni/puvodni, @mena CZK/EUR) &#8211; cena telefonu 
+   dostupnost
+    sklad (@mesto Praha/Brno/Ostrava) &#8211; po&#269;et polo&#382;ek na sklad&#283;
+   obrazek &#8211; n&aacute;zev souboru s obr&aacute;zkem telefonu
+   video &#8211; odkaz na YouTube video
+   popis &#8211; n&#283;kolik v&#283;t o produktu
+   parametry &#8211; rodi&#269; v&#353;ech parametr&#367;
+    system &#8211; rodi&#269; informac&iacute; o syst&eacute;mu
+    nazev &#8211; n&aacute;zev syst&eacute;mu
+     verze &#8211; ozna&#269;en&iacute; verze syst&eacute;mu
+    ram (@jednotka MB/GB/TB) &#8211; mno&#382;stv&iacute; pam&#283;ti ram
+    interniUloziste (@jednotka MB/GB/TB) &#8211; mnostv&iacute; intern&iacute; pam&#283;ti
+    externiUloziste &#8211; typ extern&iacute;ho &uacute;lo&#382;i&#353;t&#283;
+    cpu &#8211; rodi&#269; parametr&#367; procesoru
+     nazev &#8211; n&aacute;zev procesoru
+     pocetJader &#8211; po&#269;et jader procesoru
+     frekvence (@jednotka GHz/MHz) &#8211; frekvence CPU 
+    fotoaparat (@typ predni/zadni) &#8211; rodi&#269; parametr&#367; fotoapar&aacute;tu
+     rozliseni &#8211; rozli&#353;en&iacute; fotoapar&aacute;tu
+     svetelnost &#8211; sv&#283;telnost fotoapar&aacute;tu
+     blesk &#8211; ano/ne zda m&aacute; fotoapar&aacute;t blesk
+     stabilizace &#8211; ano/ne zda m&aacute; fotoapar&aacute;t optickou stabilizaci
+    displej &#8211; rodi&#269; parametr&#367; displeje
+     velikost (@jednotka ") &#8211; velikost displeje
+     rozliseni &#8211; rozli&#353;en&iacute; displeje
+    baterie &#8211; rodi&#269; parametr&#367; baterie
+     kapacita (@jednotka mAh/Ah) &#8211; kapacita baterie
+    sim (@typ nano/mikro/mini) &#8211; rodi&#269; sim karet
+     pocet &#8211; po&#269;et SIM karet dan&eacute;ho typu
+    konektivita &#8211; rodi&#269; parametr&#367; konektivity
+     wifi &#8211; ano/ne
+     lte &#8211; ano/ne
+     bluetooth &#8211; ano/ne
+     nfc &#8211; ano/ne
+    barvy &#8211; rodi&#269; barev
+     barva &#8211; jednotliv&aacute; dostupn&aacute; barva telefonu
+    rozmery (@jednotka mm/cm) &#8211; rodi&#269; jednotliv&yacute;ch rozm&#283;r&#367; telefonu
+     s &#8211; &#353;&iacute;&#345;ka
+     v &#8211; v&yacute;&#353;ka
+     h &#8211; hloubka
+    obsahBaleni &#8211; rodi&#269; polo&#382;ek obsahu balen&iacute;
+     polozka &#8211; jednotliv&aacute; polo&#382;ka obsahu balen&iacute;
+ dph &#8211; aktu&aacute;ln&iacute; sazba DPH
+                </pre></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e32"></a>XML Schema</h2></div></div></div><p>XML sch&eacute;ma popisuje strukturu XML dokumentu popsan&eacute;ho v&yacute;&#353;e. &#344;&iacute;k&aacute;, kter&eacute; elementy
+                XML mus&iacute; obsahovat, jejich po&#269;et, po&#345;ad&iacute; a definuje dal&#353;&iacute; omezen&iacute;. V neposledn&iacute; &#345;ad&#283;
+                se d&aacute; pou&#382;&iacute;t pro kontrolu unik&aacute;tnosti, viz n&aacute;sleduj&iacute;c&iacute; uk&aacute;zka k&oacute;du ze semestr&aacute;ln&iacute;
+                pr&aacute;ce.</p><pre class="programlisting"><strong class="hl-tag" style="color: #000096">&lt;xs:unique</strong> <span class="hl-attribute" style="color: #F5844C">name</span>=<span class="hl-value" style="color: #993300">"unikatnostProduktovychCisel"</span><strong class="hl-tag" style="color: #000096">&gt;</strong>
+    <strong class="hl-tag" style="color: #000096">&lt;xs:selector</strong> <span class="hl-attribute" style="color: #F5844C">xpath</span>=<span class="hl-value" style="color: #993300">"polozky/polozka/produktoveCislo"</span><strong class="hl-tag" style="color: #000096">/&gt;</strong>
+    <strong class="hl-tag" style="color: #000096">&lt;xs:field</strong> <span class="hl-attribute" style="color: #F5844C">xpath</span>=<span class="hl-value" style="color: #993300">"."</span><strong class="hl-tag" style="color: #000096">/&gt;</strong>
+<strong class="hl-tag" style="color: #000096">&lt;/xs:unique&gt;</strong></pre></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e37"></a>Schematron</h2></div></div></div><p>V semestr&aacute;ln&iacute; pr&aacute;ci jsem Schematron pou&#382;il pro kontrolu cen. P&#367;vodn&iacute; cena nem&#367;&#382;e
+                b&yacute;t men&#353;&iacute;, ne&#382;
+                sou&#269;asn&aacute;.</p><pre class="programlisting"><strong class="hl-tag" style="color: #000096">&lt;xs:annotation&gt;</strong>
+  <strong class="hl-tag" style="color: #000096">&lt;xs:appinfo&gt;</strong>
+    <strong class="hl-tag" style="color: #000096">&lt;sch:pattern&gt;</strong>
+      <strong class="hl-tag" style="color: #000096">&lt;sch:title&gt;</strong>Kontrola cen<strong class="hl-tag" style="color: #000096">&lt;/sch:title&gt;</strong>
+      <strong class="hl-tag" style="color: #000096">&lt;sch:rule</strong> <span class="hl-attribute" style="color: #F5844C">context</span>=<span class="hl-value" style="color: #993300">"q:eshop/q:polozky/q:polozka"</span><strong class="hl-tag" style="color: #000096">&gt;</strong>
+        <strong class="hl-tag" style="color: #000096">&lt;sch:assert</strong> <span class="hl-attribute" style="color: #F5844C">test</span>=<span class="hl-value" style="color: #993300">"sum(q:cena[@typ = 'puvodni'][@mena = 'CZK'])
+          &gt;= sum(q:cena[@typ = 'aktualni'][@mena = 'CZK'])"</span><strong class="hl-tag" style="color: #000096">&gt;</strong>
+          Aktu&aacute;ln&iacute; cena mus&iacute; b&yacute;t stejn&aacute;, nebo ni&#382;&#353;&iacute;, ne&#382; p&#367;vodn&iacute;(CZK)!
+        <strong class="hl-tag" style="color: #000096">&lt;/sch:assert&gt;</strong>
+        <strong class="hl-tag" style="color: #000096">&lt;sch:assert</strong> <span class="hl-attribute" style="color: #F5844C">test</span>=<span class="hl-value" style="color: #993300">"sum(q:cena[@typ = 'puvodni'][@mena = 'EUR']) 
+          &gt;= sum(q:cena[@typ = 'aktualni'][@mena = 'EUR'])"</span><strong class="hl-tag" style="color: #000096">&gt;</strong>
+          Aktu&aacute;ln&iacute; cena mus&iacute; b&yacute;t stejn&aacute;, nebo ni&#382;&#353;&iacute;, ne&#382; p&#367;vodn&iacute;(EUR)!
+        <strong class="hl-tag" style="color: #000096">&lt;/sch:assert&gt;</strong>
+      <strong class="hl-tag" style="color: #000096">&lt;/sch:rule&gt;</strong>
+    <strong class="hl-tag" style="color: #000096">&lt;/sch:pattern&gt;</strong>
+  <strong class="hl-tag" style="color: #000096">&lt;/xs:appinfo&gt;</strong>
+<strong class="hl-tag" style="color: #000096">&lt;/xs:annotation&gt;</strong></pre></div></div><div class="chapter"><div class="titlepage"><div><div><h1 class="title"><a name="d5e42"></a>Kapitola 2. XSL Transformace</h1></div></div></div><div class="toc"><p><b>Obsah</b></p><dl class="toc"><dt><span class="sect1"><a href="#d5e47">Transformace do HTML</a></span></dt><dd><dl><dt><span class="sect2"><a href="#d5e53">Vkl&aacute;d&aacute;n&iacute; vide&iacute;</a></span></dt></dl></dd><dt><span class="sect1"><a href="#d5e66">Transformace do FO</a></span></dt></dl></div><p>V obou transformac&iacute;ch jsem pou&#382;il XSLT ve verzi 3.0, proto&#382;e se mi ve dvou podm&iacute;nk&aacute;ch
+            hodil oper&aacute;tor <code class="code">||</code> (nebo), kter&yacute; je podporovan&yacute; a&#382; v XPath 3.0.</p><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e47"></a>Transformace do HTML</h2></div></div></div><p>Transformace je prov&aacute;d&#283;na pomoc&iacute; souboru <code class="code">eshop_html.xsl</code>. Jednotliv&eacute;
+                html str&aacute;nky n&aacute;sledn&#283; na&#269;&iacute;taj&iacute; extern&iacute; kask&aacute;dov&eacute; (CSS) styly ze souboru
+                    <code class="code">styl.css</code>. Vygenerovan&eacute; html str&aacute;nky jsou pln&#283; responzivn&iacute;. V&#283;t&#353;ina
+                prvk&#367; ve str&aacute;nce je rozm&iacute;st&#283;na pomoc&iacute; flexbox layoutu.</p><div class="sect2"><div class="titlepage"><div><div><h3 class="title"><a name="d5e53"></a>Vkl&aacute;d&aacute;n&iacute; vide&iacute;</h3></div></div></div><p>V XML Sch&eacute;matu je definov&aacute;n nepovinn&yacute; element <code class="code">&lt;video&gt;</code>. Do
+                    tohoto elementu se daj&iacute; vkl&aacute;dat odkazy na YouTube videa. Z tohoto odkazu se
+                    n&aacute;sledn&#283; pomoc&iacute; regul&aacute;rn&iacute;ho v&yacute;razu z&iacute;sk&aacute; VideoID, d&iacute;ky kter&eacute;mu se pot&eacute; do
+                        <code class="code">html</code> vkl&aacute;d&aacute; <code class="code">&lt;iframe&gt;</code> s dan&yacute;m YouTube
+                    videem.</p><pre class="programlisting"><strong class="hl-tag" style="color: #000096">&lt;iframe&gt;</strong>
+    <strong class="hl-tag" style="color: #000096">&lt;xsl:attribute</strong> <span class="hl-attribute" style="color: #F5844C">name</span>=<span class="hl-value" style="color: #993300">"src"</span><strong class="hl-tag" style="color: #000096">&gt;</strong>
+        <strong class="hl-tag" style="color: #000096">&lt;xsl:text&gt;</strong>https://www.youtube.com/embed/<strong class="hl-tag" style="color: #000096">&lt;/xsl:text&gt;</strong>
+        <strong class="hl-tag" style="color: #000096">&lt;xsl:analyze-string</strong> <span class="hl-attribute" style="color: #F5844C">select</span>=<span class="hl-value" style="color: #993300">"../ph:video"</span> 
+            <span class="hl-attribute" style="color: #F5844C">regex</span>=<span class="hl-value" style="color: #993300">"^.*(youtu.be/|v/|embed/|watch\?|youtube.com/user/
+            [^#]*#([^/]*?/)*)\??v?=?([^#&amp;\?]*).*"</span><strong class="hl-tag" style="color: #000096">&gt;</strong>
+            <strong class="hl-tag" style="color: #000096">&lt;xsl:matching-substring&gt;</strong>
+                <strong class="hl-tag" style="color: #000096">&lt;xsl:value-of</strong> <span class="hl-attribute" style="color: #F5844C">select</span>=<span class="hl-value" style="color: #993300">"regex-group(3)"</span><strong class="hl-tag" style="color: #000096">/&gt;</strong>
+            <strong class="hl-tag" style="color: #000096">&lt;/xsl:matching-substring&gt;</strong>
+            <strong class="hl-tag" style="color: #000096">&lt;xsl:non-matching-substring&gt;</strong>
+                <strong class="hl-tag" style="color: #000096">&lt;xsl:message&gt;</strong>
+                    <strong class="hl-tag" style="color: #000096">&lt;xsl:text&gt;</strong>Chyba ve vstupn&iacute;ch datech: <strong class="hl-tag" style="color: #000096">&lt;/xsl:text&gt;</strong>
+                    <strong class="hl-tag" style="color: #000096">&lt;xsl:value-of</strong> <span class="hl-attribute" style="color: #F5844C">select</span>=<span class="hl-value" style="color: #993300">"."</span><strong class="hl-tag" style="color: #000096">/&gt;</strong>
+                <strong class="hl-tag" style="color: #000096">&lt;/xsl:message&gt;</strong>
+            <strong class="hl-tag" style="color: #000096">&lt;/xsl:non-matching-substring&gt;</strong>
+        <strong class="hl-tag" style="color: #000096">&lt;/xsl:analyze-string&gt;</strong>
+        <strong class="hl-tag" style="color: #000096">&lt;xsl:text&gt;</strong>?rel=0&amp;showinfo=0<strong class="hl-tag" style="color: #000096">&lt;/xsl:text&gt;</strong>
+    <strong class="hl-tag" style="color: #000096">&lt;/xsl:attribute&gt;</strong>
+    <strong class="hl-tag" style="color: #000096">&lt;xsl:attribute</strong> <span class="hl-attribute" style="color: #F5844C">name</span>=<span class="hl-value" style="color: #993300">"allowfullscreen"</span><strong class="hl-tag" style="color: #000096">/&gt;</strong>
+<strong class="hl-tag" style="color: #000096">&lt;/iframe&gt;</strong></pre><div class="figure"><a name="d5e61"></a><p class="title"><b>Obr&aacute;zek 2.1. Jedna z vygenerovan&yacute;ch html str&aacute;nek</b></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="../../img/screenshot.PNG" width="100%" alt="Jedna z vygenerovan&yacute;ch html str&aacute;nek"></td></tr></table></div></div></div><br class="figure-break"></div></div><div class="sect1"><div class="titlepage"><div><div><h2 class="title" style="clear: both"><a name="d5e66"></a>Transformace do FO</h2></div></div></div><p>Transformace je prov&aacute;d&#283;na pomoc&iacute; souboru <code class="code">eshop_fo.xsl</code>. Sna&#382;il jsem se
+                dodr&#382;et stejn&yacute; grafick&yacute; styl jako v p&#345;&iacute;pad&#283; html.</p><div class="figure"><a name="d5e71"></a><p class="title"><b>Obr&aacute;zek 2.2. Vygenerovan&eacute; PDF</b></p><div class="figure-contents"><div class="mediaobject"><table border="0" summary="manufactured viewport for HTML img" style="cellpadding: 0; cellspacing: 0;" width="100%"><tr><td><img src="../../img/screenshotPDF.PNG" width="100%" alt="Vygenerovan&eacute; PDF"></td></tr></table></div></div></div><br class="figure-break"></div></div></div></body></html>

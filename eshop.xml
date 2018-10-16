@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<eshop xmlns="https://petrhovorka.com/smartelefon"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://petrhovorka.com/smartelefon eshop.xsd">
+    <polozky>
+        <polozka>
+            <vyrobce>Samsung</vyrobce>
+            <model>Galaxy J5 Duos</model>
+            <produktoveCislo>SM-J530FZKDETL</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">4790</cena>
+            <cena typ="puvodni" mena="CZK">6690</cena>
+            <cena typ="puvodni" mena="EUR">280</cena>
+            <cena typ="aktualni" mena="EUR">200</cena>
+            <dostupnost>
+                <sklad mesto="Praha">0</sklad>
+                <sklad mesto="Brno">0</sklad>
+                <sklad mesto="Ostrava">0</sklad>
+            </dostupnost>
+            <obrazek>samsungJ5Duos.jpg</obrazek>
+            <popis>Kromě svých vynikajících technických parametrů a množství praktických funkcí vás
+                chytrý telefon Galaxy J5 od společnosti Samsung nadchne i stylovým designem. Jeho
+                kovové provedení vás okouzlí na první pohled, zároveň oceníte jeho ergonomickou a
+                pevnou konstrukci. A na 5,2palcovém Super AMOLED displeji s HD rozlišením, který
+                chrání tvrzené 2.5D sklo, si vychutnáte veškerý multimediální obsah ve vysoké
+                kvalitě.</popis>
+            <parametry>
+                <system>
+                    <nazev>Android</nazev>
+                    <verze>7.1</verze>
+                </system>
+                <ram jednotka="GB">2</ram>
+                <interniUloziste jednotka="GB">16</interniUloziste>
+                <externiUloziste>MicroSDXC</externiUloziste>
+                <cpu>
+                    <nazev>Exynos 7870 Octa Core 64bit</nazev>
+                    <pocetJader>8</pocetJader>
+                    <frekvence jednotka="GHz">1.6</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>13MPx</rozliseni>
+                    <svetelnost>F/1.9</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ne</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>13MPx</rozliseni>
+                    <svetelnost>F/1.9</svetelnost>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">5.2</velikost>
+                    <rozliseni>1280x720</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">3000</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>2</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>Černá</barva>
+                    <barva>Zlatá</barva>
+                    <barva>Modrá</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>71.3</s>
+                    <v>146.3</v>
+                    <h>7.9</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>Napájecí adaptér</polozka>
+                    <polozka>USB kabel</polozka>
+                    <polozka>Sluchátka</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Apple</vyrobce>
+            <model>iPhone SE 32GB</model>
+            <produktoveCislo>MP822CS/A</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">7777</cena>
+            <cena typ="puvodni" mena="CZK">12999</cena>
+            <cena typ="aktualni" mena="EUR">300</cena>
+            <cena typ="puvodni" mena="EUR">510</cena>
+            <dostupnost>
+                <sklad mesto="Praha">12</sklad>
+                <sklad mesto="Brno">9</sklad>
+                <sklad mesto="Ostrava">4</sklad>
+            </dostupnost>
+            <obrazek>iPhoneSE.jpg</obrazek>
+            <popis>Návrat oblíbeného designu se 4" úhlopříčkou.
+                Společnost Apple opět útočí na základní smysly mnoha miliónů uživatelů po celém světě. Nový iPhone SE je totiž ideální volba pro všechny zákazníky, kteří milují malé telefony pro jejich kompaktnost a snadné ovládání jednou rukou. V oblíbeném designu tak najdete ten vůbec nejvýkonnější 4palcový telefon na světě.
+            </popis>
+            <parametry>
+                <system>
+                    <nazev>iOS</nazev>
+                    <verze>11.3.1</verze>
+                </system>
+                <ram jednotka="GB">2</ram>
+                <interniUloziste jednotka="GB">32</interniUloziste>
+                <cpu>
+                    <nazev>Apple A9</nazev>
+                    <pocetJader>2</pocetJader>
+                    <frekvence jednotka="GHz">1.84</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>12Mpx</rozliseni>
+                    <svetelnost>f/2,2</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ne</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>1,2Mpx</rozliseni>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">4</velikost>
+                    <rozliseni>1136x640</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">1624</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>1</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>Stříbrná</barva>
+                    <barva>Zlatá</barva>
+                    <barva>Vesmírně šedá</barva>
+                    <barva>Růžově zlatá</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>58.6</s>
+                    <v>123.8</v>
+                    <h>7.6</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>Manuál</polozka>
+                    <polozka>USB kabel</polozka>
+                    <polozka>napájecí adaptér</polozka>
+                    <polozka>sluchátka</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Apple</vyrobce>
+            <model>iPhone X 64GB</model>
+            <produktoveCislo>MQAD2CN/A</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">29890</cena>
+            <cena typ="puvodni" mena="CZK">29990</cena>
+            <cena typ="aktualni" mena="EUR">1175</cena>
+            <cena typ="puvodni" mena="EUR">1180</cena>
+            <dostupnost>
+                <sklad mesto="Praha">6</sklad>
+                <sklad mesto="Brno">8</sklad>
+                <sklad mesto="Ostrava">1</sklad>
+            </dostupnost>
+            <obrazek>iPhoneX.jpg</obrazek>
+            <video>https://youtu.be/mW6hFttt_KE</video>
+            <popis>
+                iPhone jsme si vždycky představovali jako zařízení, které je vlastně jen obrazovka. Které ustoupí tomu, co na něm zrovna děláš. A které je tak inteligentní, že reaguje na dotyky, slova i pohledy. S iPhonem X jsme tuhle představu proměnili v realitu. Takhle vypadá budoucnost.
+            </popis>
+            <parametry>
+                <system>
+                    <nazev>iOS</nazev>
+                    <verze>11.3.1</verze>
+                </system>
+                <ram jednotka="GB">3</ram>
+                <interniUloziste jednotka="GB">64</interniUloziste>
+                <cpu>
+                    <nazev>Apple A11 Bionic Hexa Core 64bit</nazev>
+                    <pocetJader>6</pocetJader>
+                    <frekvence jednotka="GHz">2.5</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>12Mpx</rozliseni>
+                    <svetelnost>f/1,8</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ano</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>7Mpx</rozliseni>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">5.8</velikost>
+                    <rozliseni>2436x1125</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">2716</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>1</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>Stříbrná</barva>
+                    <barva>Vesmírně šedá</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>70.9</s>
+                    <v>143.6</v>
+                    <h>7.7</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>Manuál</polozka>
+                    <polozka>USB kabel</polozka>
+                    <polozka>napájecí adaptér</polozka>
+                    <polozka>sluchátka</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Apple</vyrobce>
+            <model>iPhone 8 64GB</model>
+            <produktoveCislo>MQ6G2CN/A</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">20990</cena>
+            <cena typ="puvodni" mena="CZK">21990</cena>
+            <cena typ="aktualni" mena="EUR">820</cena>
+            <cena typ="puvodni" mena="EUR">860</cena>
+            <dostupnost>
+                <sklad mesto="Praha">9</sklad>
+                <sklad mesto="Brno">12</sklad>
+                <sklad mesto="Ostrava">8</sklad>
+            </dostupnost>
+            <obrazek>iPhone8.jpg</obrazek>
+            <popis>
+                Pěkně chytrý telefon.
+                iPhone 8 má elegantní skleněnou konstrukci. Nejoblíbenější foťák na světě v novém. Vůbec nejchytřejší a nejvýkonnější čip ve smartphonu. Pohodlné bezdrátové nabíjení. A nevídané možnosti rozšířené reality. iPhone 8 představuje novou generaci iPhonu.
+            </popis>
+            <parametry>
+                <system>
+                    <nazev>iOS</nazev>
+                    <verze>11.3.1</verze>
+                </system>
+                <ram jednotka="GB">2</ram>
+                <interniUloziste jednotka="GB">64</interniUloziste>
+                <cpu>
+                    <nazev>Apple A11 Bionic Hexa Core 64bit</nazev>
+                    <pocetJader>6</pocetJader>
+                    <frekvence jednotka="GHz">2.5</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>12Mpx</rozliseni>
+                    <svetelnost>f/1,8</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ano</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>7Mpx</rozliseni>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">4.7</velikost>
+                    <rozliseni>1334x750</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">1821</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>1</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>Zlatá</barva>
+                    <barva>Stříbrná</barva>
+                    <barva>Vesmírně šedá</barva>
+                    <barva>Černvená</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>67.3</s>
+                    <v>138.4</v>
+                    <h>7.3</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>Manuál</polozka>
+                    <polozka>USB kabel</polozka>
+                    <polozka>napájecí adaptér</polozka>
+                    <polozka>sluchátka</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Huawei</vyrobce>
+            <model>P20 Pro</model>
+            <produktoveCislo>SP-P20PDSFOM</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">21590</cena>
+            <cena typ="puvodni" mena="CZK">21990</cena>
+            <cena typ="aktualni" mena="EUR">840</cena>
+            <cena typ="puvodni" mena="EUR">860</cena>
+            <dostupnost>
+                <sklad mesto="Praha">2</sklad>
+                <sklad mesto="Brno">1</sklad>
+                <sklad mesto="Ostrava">3</sklad>
+            </dostupnost>
+            <obrazek>huaweiP20.jpg</obrazek>
+            <video>https://www.youtube.com/watch?v=CXfOZpe4Uww</video>
+            <popis>
+                Huawei P20 Pro Twilight, nejlepší fotomobil
+                Žhavá novinka Huawei P20 Pro přichází na trh přesně v ten pravý moment, protože má velkou ambici porazit svého jihokorejského souputníka. Kdy jindy, když ne teď? Jeho pestrá výbava totiž zahrnuje nejen rekordní soustavu tří fotoaparátů Leica, ale zaujme i po stránce skvělého designu.
+            </popis>
+            <parametry>
+                <system>
+                    <nazev>Android</nazev>
+                    <verze>8.1</verze>
+                </system>
+                <ram jednotka="GB">6</ram>
+                <interniUloziste jednotka="GB">128</interniUloziste>
+                <cpu>
+                    <nazev>Kirin 970 Octa core</nazev>
+                    <pocetJader>8</pocetJader>
+                    <frekvence jednotka="GHz">2.36</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>40MPx</rozliseni>
+                    <svetelnost>f/1,8</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ano</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>24MPx</rozliseni>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">6.1</velikost>
+                    <rozliseni>2244x1080</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">4000</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>2</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>Černá</barva>
+                    <barva>Modrá</barva>
+                    <barva>Fialová</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>73.9</s>
+                    <v>155</v>
+                    <h>7.8</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>Manuál</polozka>
+                    <polozka>USB-C kabel</polozka>
+                    <polozka>napájecí adaptér</polozka>
+                    <polozka>adaptér USB-C na 3,5mm jack</polozka>
+                    <polozka>pouzdro</polozka>
+                    <polozka>sluchátka</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Samsung</vyrobce>
+            <model>Galaxy Note8</model>
+            <produktoveCislo>SM-N950FZDDETL</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">25590</cena>
+            <cena typ="puvodni" mena="CZK">26990</cena>
+            <cena typ="aktualni" mena="EUR">1000</cena>
+            <cena typ="puvodni" mena="EUR">1050</cena>
+            <dostupnost>
+                <sklad mesto="Praha">7</sklad>
+                <sklad mesto="Brno">5</sklad>
+                <sklad mesto="Ostrava">3</sklad>
+            </dostupnost>
+            <obrazek>samsungNote8.jpg</obrazek>
+            <video>https://www.youtube.com/watch?v=RKYjdTiMkXM</video>
+            <popis>
+                Tvořte velké věci
+                Nechejte se vtáhnout do neuvěřitelně rozsáhlého Infinity displeje. Vtiskněte své komunikaci jedinečnost prostřednictvím dotykového pera S Pen. Zachyťte ještě ostřejší fotografie duálním fotoaparátem. Objevte výkonný hardware pro náročnou práci i nikdy nekončící zábavu. Seznamte se s jedinečným smartphonem Samsung Galaxy Note8
+            </popis>
+            <parametry>
+                <system>
+                    <nazev>Android</nazev>
+                    <verze>7.1</verze>
+                </system>
+                <ram jednotka="GB">6</ram>
+                <interniUloziste jednotka="GB">64</interniUloziste>
+                <externiUloziste>MicroSDXC</externiUloziste>
+                <cpu>
+                    <nazev>Exynos 8895 Octa Core</nazev>
+                    <pocetJader>8</pocetJader>
+                    <frekvence jednotka="GHz">2.3</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>12MPx</rozliseni>
+                    <svetelnost>f/1,7</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ano</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>8MPx</rozliseni>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">6.3</velikost>
+                    <rozliseni>2960x1440</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">3300</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>2</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>Černá</barva>
+                    <barva>Zlatá</barva>
+                    <barva>Modrá</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>74.8</s>
+                    <v>162.5</v>
+                    <h>8.6</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>Manuál</polozka>
+                    <polozka>USB kabel</polozka>
+                    <polozka>napájecí adaptér</polozka>
+                    <polozka>stylus</polozka>
+                    <polozka>sluchátka</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Xiaomi</vyrobce>
+            <model>Redmi 5 Plus 32GB LTE</model>
+            <produktoveCislo>PH3771</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">4449</cena>
+            <cena typ="puvodni" mena="CZK">5199</cena>
+            <cena typ="puvodni" mena="EUR">200</cena>
+            <cena typ="aktualni" mena="EUR">175</cena>
+            <dostupnost>
+                <sklad mesto="Praha">7</sklad>
+                <sklad mesto="Brno">3</sklad>
+                <sklad mesto="Ostrava">6</sklad>
+            </dostupnost>
+            <obrazek>xiaomiRedmi5Plus.jpg</obrazek>
+            <popis>Pokud hledáte mobil vhodný pro hraní her, sledování videí či surfování na internetu, tak jste ho právě našli! Nebudete mít problém ani s nedostatkem místa díky integrované 32GB paměti a slotu pro paměťovou kartu micro SD až do velikosti 128 GB. Podporuje také rychlý internet LTE na všech českých frekvencích. </popis>
+            <parametry>
+                <system>
+                    <nazev>Android</nazev>
+                    <verze>7.0</verze>
+                </system>
+                <ram jednotka="GB">3</ram>
+                <interniUloziste jednotka="GB">32</interniUloziste>
+                <externiUloziste>MicroSD</externiUloziste>
+                <cpu>
+                    <nazev>Qualcomm Snapdragon 625 Octa Core</nazev>
+                    <pocetJader>8</pocetJader>
+                    <frekvence jednotka="GHz">2</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>12MPx</rozliseni>
+                    <svetelnost>f/2,2</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ne</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>5Mpx</rozliseni>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">5.99</velikost>
+                    <rozliseni>2160x1080</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">4000</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>2</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ne</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>černá</barva>
+                    <barva>zlatá</barva>
+                    <barva>modrá</barva>
+                </barvy>
+                <rozmery jednotka="cm">
+                    <s>75.4</s>
+                    <v>158.5</v>
+                    <h>8.05</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>Napájecí adaptér</polozka>
+                    <polozka>USB kabel</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Honor</vyrobce>
+            <model>10</model>
+            <produktoveCislo>51092JHY</produktoveCislo>
+            <cena typ="aktualni" mena="CZK">12149</cena>
+            <cena typ="puvodni" mena="CZK">12490</cena>
+            <cena typ="aktualni" mena="EUR">480</cena>
+            <cena typ="puvodni" mena="EUR">490</cena>
+            <dostupnost>
+                <sklad mesto="Praha">4</sklad>
+                <sklad mesto="Brno">8</sklad>
+                <sklad mesto="Ostrava">1</sklad>
+            </dostupnost>
+            <obrazek>honor10.jpg</obrazek>
+            <video>https://youtu.be/1Z28fB-5-Go</video>
+            <popis>Novou vlajkovou loď vypouští do oceánu chytrých telefonů společnost Huawei. Skleněno-kovový model Honor 10 vynikne nad konkurenty především fotoaparáty s umělou inteligencí, která umí sama rozpoznat různé scény a nastavit telefon za vás tak, abyste vy sami už jenom zmáčkli spoušť. Lákadla dále představují osmijádrový procesor Kirin s 4GB RAM pro plynulý multitasking nebo vylepšená čtečka otisků prstu: její unikátní provedení umožňuje telefon odemykat i s mokrýma rukama. Honor 10 navíc podporuje funkci rychlého nabíjení a jako jeden z mála mobilů v této cenové kategorii umožňuje připojení k dvoupásmové WiFi.</popis>
+            <parametry>
+                <system>
+                    <nazev>Android</nazev>
+                    <verze>8.1</verze>
+                </system>
+                <ram jednotka="GB">4</ram>
+                <interniUloziste jednotka="GB">128</interniUloziste>
+                <cpu>
+                    <nazev>Kirin 970 Octa Core</nazev>
+                    <pocetJader>8</pocetJader>
+                    <frekvence jednotka="GHz">2.4</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>24MPx</rozliseni>
+                    <svetelnost>f/1.8</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ne</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>24Mpx</rozliseni>
+                    <svetelnost>f/2</svetelnost>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">5.84</velikost>
+                    <rozliseni>2280x1080</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">3400</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>2</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>černá</barva>
+                    <barva>šedá</barva>
+                    <barva>modrá</barva>
+                    <barva>zelená</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>149.6</s>
+                    <v>71.2</v>
+                    <h>7.7</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>USB kabel</polozka>
+                    <polozka>nabíjecí adaptér</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+        <polozka>
+            <vyrobce>Nokia</vyrobce>
+            <model>7 Plus</model>
+            <produktoveCislo>11B2NB01A10 </produktoveCislo>
+            <cena typ="aktualni" mena="CZK">9499</cena>
+            <cena typ="puvodni" mena="CZK">10299</cena>
+            <cena typ="aktualni" mena="EUR">369</cena>
+            <cena typ="puvodni" mena="EUR">399</cena>
+            <dostupnost>
+                <sklad mesto="Praha">2</sklad>
+                <sklad mesto="Brno">0</sklad>
+                <sklad mesto="Ostrava">1</sklad>
+            </dostupnost>
+            <obrazek>nokia7Plus.jpg</obrazek>
+            <video>https://www.youtube.com/watch?v=NNgldYw5x9E</video>
+            <popis>Nokia 7 Plus je vybavena skvělým 6“ HD IPS displejem s poměrem stran 18:9. Disponuje také odolným sklem Corning Gorilla Glass 3. Jediným klepnutím rozdělíte obrazovku a můžete sledovat dvě různá okna s poměrem 1:1. Tělo telefonu je vyrobeno z pevného hliníkového bloku řady 6000, což vám zaručí dlouhou odolnost. Díky tenkým hranám, které jsou broušené diamantovým řezem telefon skvěle padne do ruky. Mobilní telefon Nokia 7 Plus charakterizuje čistý vzhled, uhlazené křivky a keramický povrch.</popis>
+            <parametry>
+                <system>
+                    <nazev>Android</nazev>
+                    <verze>8.0</verze>
+                </system>
+                <ram jednotka="GB">4</ram>
+                <interniUloziste jednotka="GB">64</interniUloziste>
+                <externiUloziste>MicroSDXC</externiUloziste>
+                <cpu>
+                    <nazev>Qualcomm Snapdragon 660</nazev>
+                    <pocetJader>8</pocetJader>
+                    <frekvence jednotka="GHz">2.2</frekvence>
+                </cpu>
+                <fotoaparat typ="zadni">
+                    <rozliseni>12Mpx</rozliseni>
+                    <svetelnost>f/1.75</svetelnost>
+                    <blesk>ano</blesk>
+                    <stabilizace>ne</stabilizace>
+                </fotoaparat>
+                <fotoaparat typ="predni">
+                    <rozliseni>16MPx</rozliseni>
+                    <svetelnost>f/2.0</svetelnost>
+                </fotoaparat>
+                <displej>
+                    <velikost jednotka="&quot;">6.0</velikost>
+                    <rozliseni>1080x2160</rozliseni>
+                </displej>
+                <baterie>
+                    <kapacita jednotka="mAh">3800</kapacita>
+                </baterie>
+                <sim typ="nano">
+                    <pocet>2</pocet>
+                </sim>
+                <konektivita>
+                    <wifi>ano</wifi>
+                    <lte>ano</lte>
+                    <bluetooth>ano</bluetooth>
+                    <nfc>ano</nfc>
+                </konektivita>
+                <barvy>
+                    <barva>černá</barva>
+                </barvy>
+                <rozmery jednotka="mm">
+                    <s>75.6</s>
+                    <v>158.4</v>
+                    <h>8</h>
+                </rozmery>
+                <obsahBaleni>
+                    <polozka>USB kabel</polozka>
+                    <polozka>napájecí adaptér</polozka>
+                    <polozka>sluchátka</polozka>
+                </obsahBaleni>
+            </parametry>
+        </polozka>
+    </polozky>
+    <dph>0.21</dph>
+</eshop>
